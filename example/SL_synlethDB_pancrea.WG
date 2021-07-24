@@ -1,0 +1,23 @@
+CENPE	MAPK3	Text Mining	SL	lung cancer;neuroblastoma;pancreatic and colon carcinoma_D008175;D009447;D010190	0.1775
+AKT1	BCL2	Text Mining	SL	pancreatic cancer_D010190	0.1775
+BCL2	CUX1	Text Mining	SL	pancreatic cancer_D010190	0.1775
+EGF	EGFR	Text Mining	SL	pancreatic cancer_D010190	0.1775
+ADM	MDM2	Text Mining	SL	pancreatic cancer_D010190	0.1775
+ADM	MMP28	Text Mining	SL	pancreatic cancer_D010190	0.1775
+MDM2	MMP28	Text Mining	SL	pancreatic cancer_D010190	0.1775
+BCL2	PIK3CA	Text Mining	SL	pancreatic cancer_D010190	0.1775
+CUX1	PIK3CA	Text Mining	SL	pancreatic cancer_D010190	0.1775
+ADM	TIPARP	Text Mining	SL	pancreatic cancer_D010190	0.1775
+MDM2	TIPARP	Text Mining	SL	pancreatic cancer_D010190	0.1775
+MMP28	TIPARP	Text Mining	SL	pancreatic cancer_D010190	0.1775
+EGFR	MAPK1	Text Mining	SL	breast cancers;pancreatic cancer_D001943;D010190	0.273125
+BCL2	PARP1	Text Mining	SL	non-small cell lung carcinoma;breast cancer;lung adenocarcinoma;pancreatic cancer_D002289;D001943;C5	0.273125
+AKT1	PARP1	Text Mining	SL	oral cancer;gingival cancer_D009062;D005891;pancreatic cancer;gingival cancer;hepatocellular carcinoma_D010190;D009062;D0065	0.34334375
+PARP1	PIK3CA	Text Mining	SL	pancreatic cancer;lymphoma;hepatocellular carcinoma_D010190;D008223;D006528	0.34334375
+AKT1	PIK3CA	Text Mining	SL	pancreatic cancer;prostate cancer;hepatocellular carcinoma_D010190;D011471;D006528	0.3982579
+AKT1	CUX1	Text Mining	SL	pancreatic cancer_D010190	0.4305
+EGF	MAPK1	Text Mining	SL	pancreatic cancer_D010190	0.56
+CUX1	PARP1	Text Mining	SL	pancreatic cancer_D010190	0.56
+EGF	RPS6KA2	Text Mining	SL	pancreatic cancer_D010190	0.56
+EGFR	RPS6KA2	Text Mining	SL	pancreatic cancer_D010190	0.56
+MAPK1	RPS6KA2	Text Mining	SL	pancreatic cancer_D010190	0.56
