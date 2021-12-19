@@ -7,7 +7,7 @@ Introduction
 DSCN is a tool that takes multi-omics data and prioritize target combinations that facilitate the development
 of novel treatment plan of complex diseases such as cancers.
 DSCN derived from the previous work 'SCNrank', which takes the same input and prioritize single targets.
-Check <a href="https://link.springer.com/article/10.1186/s12920-020-0681-6">SCNrank</a> if you are interested in our previous work.
+<a href="https://link.springer.com/article/10.1186/s12920-020-0681-6">SCNrank link</a> if
 
 
 Overview
@@ -16,8 +16,8 @@ Overview
 
 Quickstart
 ----------
-Run clustering on your tissue data as:
 
+In order to fetch the source code run:
 
 
 Installing
@@ -29,11 +29,10 @@ networkx>=2.0
 
 Citation
 --------
-To be added
+
 
 License
 -------
-We follow the MIT License so people are free to check and use the code.
 
 Usage
 ------
