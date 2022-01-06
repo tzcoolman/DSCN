@@ -2,13 +2,21 @@ import DSCN_loading as DSCN_load
 import DSCN_scorer_local_TN as DSCN_scorer
 
 
-target_file="SL_synlethDB_pancrea.WG.list"
-t_exp_file="tumor_exp.txt.WG"
-t_fc_file="tumor.FC.WG"
-c_exp_file="cellline_exp.txt.WG"
-c_essen_file="cellline.FC.WG"
-ppi_file="string_PPI.network.WG"
-cluster_file="WG.cluster"
+#target_file="SL_synlethDB_pancrea.WG.list"
+#t_exp_file="tumor_exp.txt.WG"
+#t_fc_file="tumor.FC.WG"
+#c_exp_file="cellline_exp.txt.WG"
+#c_essen_file="cellline.FC.WG"
+#ppi_file="string_PPI.network.WG"
+#cluster_file="WG.cluster"
+
+target_file=sys.argv[1]
+t_exp_file=sys.argv[2]
+t_fc_file=sys.argv[3]
+c_exp_file=sys.argv[4]
+c_essen_file=sys.argv[5]
+ppi_file=sys.argv[6]
+cluster_file=sys.argv[7]
 
 '''
 target_file="../string_target_unique.list"

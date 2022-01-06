@@ -32,9 +32,12 @@ def load_PPI(filename):
 		temp=line[:-1].replace("\r","").split("\t")
 		PPI_hash[temp[0]+"\t"+temp[1]]=1
 
-exp_file="tumor_exp.txt.WG"
-fc_file="tumor.FC.WG.nolog"
-ppi_file="string_PPI.network.WG"
+#exp_file="tumor_exp.txt.WG"
+#fc_file="tumor.FC.WG.nolog"
+#ppi_file="string_PPI.network.WG"
+exp_file=sys.argv[1]
+fc_file=sys.argv[2]
+ppi_file=sys.argv[3]
 '''
 exp_file="MAPK_PATHWAY/tumor_exp_overlap.FC.MAPK_pathway"
 fc_file="MAPK_PATHWAY/tumor_exp_overlap.txt.MAPK_pathway"

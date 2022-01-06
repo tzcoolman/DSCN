@@ -62,11 +62,18 @@ def new_essentiality(sample_list,essen_hash,graph):
 ############################################################
 #load exp, gene essen and PPI
 ############################################################
-target_file="../SL_synlethDB_pancrea.WG.list"
-exp_file="../cellline_exp.txt.WG"
-essen_file="../cellline.FC.WG"
-ppi_file="../string_PPI.network.WG"
-cluster_file="../WG.cluster"
+#target_file="../SL_synlethDB_pancrea.WG.list"
+#exp_file="../cellline_exp.txt.WG"
+#essen_file="../cellline.FC.WG"
+#ppi_file="../string_PPI.network.WG"
+#cluster_file="../WG.cluster"
+
+target_file=sys.argv[1]
+exp_file=sys.argv[2]
+essen_file=sys.argv[3]
+ppi_file=sys.argv[4]
+cluster_file=sys.argv[5]
+
 
 '''
 target_file="../string_target_unique.list"
