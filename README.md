@@ -23,9 +23,13 @@ Run clustering on your tissue data as:
 Installing
 ----------
 DSCN doesnot require additional installation. It has the minimum requirements stated as:
+
 numpy>=1.9
+
 multipleprocessing
+
 sklean>=0.16
+
 networkx>=2.0
 
 Citation
@@ -39,20 +43,29 @@ We follow the MIT License so people are free to check and use the code.
 Usage
 ------
 STEP1: Prepare your input
+
 a_file. A tumor expression profile
+
 b_file. A tumor vs normal fold change profile
+
 c_file. A cell-line expression profile
+
 d_file. A cell-line CRISPR screening profile
+
 e_file. A PPI network (STRING human PPI V10 with no cut-offs recommended)
+
 f_file. A target file indicating the designated set of targets.
 
 STEP2: Make a overlapped subset of your input files (a_file'-f_file')
 
 STEP3: Run spectral clustering first
+
 e.g. python DSCN_WG_SC.py a_file' b_file' e_file' > SC_result
 
 STEP4: Score target combinations 
+
 e.g. python DSCN_MP_TN_refine.py f_file' c_file' f_file' e_file' SC_result > ranked_list
 
 STEP5: Estimate subnetwork similarity between tumor and cell-lines (optional)
+
 e.g. python DSCN_sn_similarity.py f_file' a_file' b_file' c_file' d_file' e_file' SC_result 
