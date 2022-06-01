@@ -20,28 +20,18 @@ Run clustering on your tissue data as:
 
 
 
-Installation
+Installing
 ----------
-DSCN has been developed under python/2.7.16 but supports python3.
-
 DSCN doesnot require additional installation. It has the minimum requirements stated as:
 
 numpy>=1.9
+
 multipleprocessing
+
 sklean>=0.16
+
 networkx>=2.0
 
-These packages can be install via pip:
-```
-pip install numpy==1.6
-pip install networkx==2.0
-...
-```
-Or via bioconda:
-```
-conda install -c bioconda networkx
-...
-```
 Citation
 --------
 To be added
