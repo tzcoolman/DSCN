@@ -12,7 +12,10 @@ Check <a href="https://link.springer.com/article/10.1186/s12920-020-0681-6">SCNr
 
 Overview
 --------
-
+DSCN takes multi-omics data as input from both tissue and cell-line models, construct functional networks for each respectively.
+Collect features from tissue network, map them onto cell-line network, where actionable target combinations are predicted.
+![Slide1.jpg](https://www.biorxiv.org/content/biorxiv/early/2021/09/06/2021.09.06.459081/F1.large.jpg?width=800&height=600&carousel=1)
+**Fig 1.** General workflow of DSCN predicting target combinations.
 
 Quickstart
 ----------
