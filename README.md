@@ -24,7 +24,7 @@ DSCN generally contains the following steps:
 3. Map features onto the cell-line network.
 4. Select first target from the cell-line network.
 5. Select second target (target combination) based on the adjusted cell-line network given the first target.
-Optional: add P-values on top the selected target combination.
+6. (Optional) add P-values on top the selected target combination.
 
 Quickstart
 ----------
@@ -77,7 +77,7 @@ c_file. A cell-line **expression profile**. It can be sequencing data or array e
 
 d_file. A cell-line **CRISPR screening** profile. CRISPR screening data of pancreatic cell-lines from [DepMap](https://depmap.org/portal/) is used in the example but RNAi data is also supported.
 
-e_file. A Protein-protein interaction (**PPI**) network. [STRING](https://string-db.org/cgi/download?sessionId=bZvjml3QVCPG) human PPI V10 with no cut-off is used as the example. PPI networks from other sources such as PathPPI can also be used.
+e_file. A Protein-protein interaction (**PPI**) network. [STRING](https://string-db.org/cgi/download?sessionId=bZvjml3QVCPG) human protein links V10 with no cut-off is used as the example. PPI networks from other sources such as PathPPI can also be used.
 
 f_file. A target file indicating the designated set of targets. A subset of target genes of FDA approved drug from [DrugBank](https://go.drugbank.com/) database is used in the example. But any gene (target) can be potentially used.
 
