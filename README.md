@@ -24,7 +24,7 @@ DSCN generally contains the following steps:
 3. Map features onto the cell-line network.
 4. Select first target from the cell-line network.
 5. Select second target (target combination) based on the adjusted cell-line network given the first target.
-6. (Optional) add P-values on top the selected target combination.
+6. (Optional) Measure similarities between tissue and cell-line subnetworks.
 
 Quickstart
 ----------
@@ -100,7 +100,7 @@ e.g. python DSCN_spectral_clustering.py a_file' b_file' e_file' > SC_result
 
 >STEP3: Score target combinations 
 
-e.g. python DSCN_score_target_combination.py f_file' c_file' f_file' e_file' SC_result 4 > ranked_list
+e.g. python DSCN_score_target_combinations.py f_file' c_file' f_file' e_file' SC_result 4 > ranked_list
 
 >STEP4: Estimate subnetwork similarity between tumor and cell-lines (optional)
 
