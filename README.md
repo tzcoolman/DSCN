@@ -105,6 +105,7 @@ e.g. python DSCN_sn_similarity.py f_file' a_file' b_file' c_file' d_file' e_file
 References
 ----------
 [1] Von Luxburg U. A tutorial on spectral clustering[J]. Statistics and computing, 2007, 17(4): 395-416.
+
 License
 -------
 DSCN follows the MIT License.
