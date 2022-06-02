@@ -16,6 +16,7 @@ DSCN takes multi-omics data as input from both tissue and cell-line models, cons
 Collect features from tissue network, map them onto cell-line network, where actionable target combinations are predicted.
 ![Slide1.jpg](https://www.biorxiv.org/content/biorxiv/early/2021/09/06/2021.09.06.459081/F1.large.jpg?width=800&height=600&carousel=1)
 Liu E, Wu X, Wang L, et al. 2021
+
 **Fig 1.** General workflow of DSCN predicting target combinations.
 DSCN generally contains the following steps:
 1. Building Tissue- and Cell-line- specific functional networks
