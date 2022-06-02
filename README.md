@@ -70,7 +70,7 @@ To run DSCN, input files need to be prepared, including:
 
 a_file. A tumor-tissue **expression profile**. It can be sequencing data or array expression data.
 
-b_file. A tumor vs normal tissue **fold change (FC)** profile
+b_file. A tumor vs normal tissue **fold change (FC)** profile.
 **Fold change is a value between 0 and positive infinity. It can not be log-fold-change (logFC). logFC would have negative value that would generate negative [eigen-value](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) and result in failure of the spectral clustering[1].**
 
 c_file. A cell-line **expression profile**. It can be sequencing data or array expression data.
