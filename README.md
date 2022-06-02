@@ -6,7 +6,7 @@ Introduction
 
 DSCN is a tool that takes multi-omics data and prioritize target combinations that facilitate the development
 of novel treatment plan of complex diseases such as cancers.
-DSCN derived from the previous work 'SCNrank', which takes the same input and prioritize single targets.
+DSCN is derived from the previous work 'SCNrank', which takes the same input and prioritize single targets.
 Check <a href="https://link.springer.com/article/10.1186/s12920-020-0681-6">SCNrank</a> if you are interested in our previous work.
 
 
@@ -15,7 +15,15 @@ Overview
 DSCN takes multi-omics data as input from both tissue and cell-line models, construct functional networks for each respectively.
 Collect features from tissue network, map them onto cell-line network, where actionable target combinations are predicted.
 ![Slide1.jpg](https://www.biorxiv.org/content/biorxiv/early/2021/09/06/2021.09.06.459081/F1.large.jpg?width=800&height=600&carousel=1)
+Liu E, Wu X, Wang L, et al. 2021
 **Fig 1.** General workflow of DSCN predicting target combinations.
+DSCN generally contains the following steps:
+1. Building Tissue- and Cell-line- specific functional networks
+2. Obtain molecular features from the tissue network via spectral clustering.
+3. Map features onto the cell-line network.
+4. Select first target from the cell-line network.
+5. Select second target (target combination) based on the adjusted cell-line network given the first target.
+(Optional) add P-values on top the selected target combination.
 
 Quickstart
 ----------
@@ -45,29 +53,44 @@ Or via bioconda:
 conda install -c bioconda networkx
 ...
 ```
+Or manually by downloading the packages, installing them and setting up environment variables accordingly:
+```
+python setup.py install
+...
+```
 Citation
 --------
 To be added
 
 License
 -------
-We follow the MIT License so people are free to check and use the code.
+DSCN follows the MIT License.
 
-Usage
-------
-STEP1: Prepare your input
+Input files
+-----------
+To run DSCN, input files need to be prepared, including:
 
-a_file. A tumor expression profile
+a_file. A tumor-tissue **expression profile**
 
-b_file. A tumor vs normal fold change profile
+b_file. A tumor vs normal tissue **fold change (FC)** profile
+**Fold change is a value between 0 and positive infinity. It can**
+**not be log-fold-change (logFC). logFC would have negative value**
+**that would generate negative eigen-value and result in failure**
+**of the spectral clustering**
 
-c_file. A cell-line expression profile
+c_file. A cell-line **expression profile**
 
 d_file. A cell-line CRISPR screening profile
 
 e_file. A PPI network (STRING human PPI V10 with no cut-offs recommended)
 
 f_file. A target file indicating the designated set of targets.
+
+Usage
+------
+STEP1: Prepare your input
+
+
 
 STEP2: Make a overlapped subset of your input files (a_file'-f_file')
 
