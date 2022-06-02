@@ -62,29 +62,25 @@ Citation
 --------
 To be added
 
-License
--------
-DSCN follows the MIT License.
 
 Input files
 -----------
 To run DSCN, input files need to be prepared, including:
 
-a_file. A tumor-tissue **expression profile**
+a_file. A tumor-tissue **expression profile**. It can be sequencing data or array expression data.
 
 b_file. A tumor vs normal tissue **fold change (FC)** profile
-**Fold change is a value between 0 and positive infinity. It can**
-**not be log-fold-change (logFC). logFC would have negative value**
-**that would generate negative eigen-value and result in failure**
-**of the spectral clustering**
+**Fold change is a value between 0 and positive infinity. It can not be log-fold-change (logFC). logFC would have negative value that would generate negative eigen-value and result in failure of the spectral clustering
 
-c_file. A cell-line **expression profile**
+c_file. A cell-line **expression profile**. It can be sequencing data or array expression data.
 
-d_file. A cell-line CRISPR screening profile
+d_file. A cell-line CRISPR screening profile. It can be from CRISPR screening or RNAi data.
 
-e_file. A PPI network (STRING human PPI V10 with no cut-offs recommended)
+e_file. A Protein-protein interaction (PPI) network. STRING human PPI V10 with no cut-off is used as the example. PPI networks from other sources such as PathPPI can also be used.
 
-f_file. A target file indicating the designated set of targets.
+f_file. A target file indicating the designated set of targets. A subset of target genes of FDA approved drug from DrugBank database is used in the example. But any gene (target) can be potentially used.
+
+**Genesets in a_file, b_file, c_file, d_file and e_file need to be identical. Genes in f_file need to be a subset of the identical geneset.**
 
 Usage
 ------
@@ -104,4 +100,8 @@ e.g. python DSCN_MP_TN_refine.py f_file' c_file' f_file' e_file' SC_result > ran
 
 STEP5: Estimate subnetwork similarity between tumor and cell-lines (optional)
 
-e.g. python DSCN_sn_similarity.py f_file' a_file' b_file' c_file' d_file' e_file' SC_result 
+e.g. python DSCN_sn_similarity.py f_file' a_file' b_file' c_file' d_file' e_file' SC_result
+
+License
+-------
+DSCN follows the MIT License.
