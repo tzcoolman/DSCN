@@ -70,7 +70,7 @@ To run DSCN, input files need to be prepared, including:
 a_file. A tumor-tissue **expression profile**. It can be sequencing data or array expression data.
 
 b_file. A tumor vs normal tissue **fold change (FC)** profile
-**Fold change is a value between 0 and positive infinity. It can not be log-fold-change (logFC). logFC would have negative value that would generate negative eigen-value and result in failure of the spectral clustering.**
+**Fold change is a value between 0 and positive infinity. It can not be log-fold-change (logFC). logFC would have negative value that would generate negative [eigen-value](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) and result in failure of the spectral clustering[1].**
 
 c_file. A cell-line **expression profile**. It can be sequencing data or array expression data.
 
@@ -102,6 +102,9 @@ STEP5: Estimate subnetwork similarity between tumor and cell-lines (optional)
 
 e.g. python DSCN_sn_similarity.py f_file' a_file' b_file' c_file' d_file' e_file' SC_result
 
+References
+----------
+[1] Von Luxburg U. A tutorial on spectral clustering[J]. Statistics and computing, 2007, 17(4): 395-416.
 License
 -------
 DSCN follows the MIT License.
