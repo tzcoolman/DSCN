@@ -70,15 +70,15 @@ To run DSCN, input files need to be prepared, including:
 a_file. A tumor-tissue **expression profile**. It can be sequencing data or array expression data.
 
 b_file. A tumor vs normal tissue **fold change (FC)** profile
-**Fold change is a value between 0 and positive infinity. It can not be log-fold-change (logFC). logFC would have negative value that would generate negative eigen-value and result in failure of the spectral clustering
+**Fold change is a value between 0 and positive infinity. It can not be log-fold-change (logFC). logFC would have negative value that would generate negative eigen-value and result in failure of the spectral clustering.**
 
 c_file. A cell-line **expression profile**. It can be sequencing data or array expression data.
 
-d_file. A cell-line CRISPR screening profile. It can be from CRISPR screening or RNAi data.
+d_file. A cell-line **CRISPR screening** profile. RNAi data is also supported.
 
-e_file. A Protein-protein interaction (PPI) network. STRING human PPI V10 with no cut-off is used as the example. PPI networks from other sources such as PathPPI can also be used.
+e_file. A Protein-protein interaction (**PPI**) network. [STRING](https://string-db.org/cgi/download?sessionId=bZvjml3QVCPG) human PPI V10 with no cut-off is used as the example. PPI networks from other sources such as PathPPI can also be used.
 
-f_file. A target file indicating the designated set of targets. A subset of target genes of FDA approved drug from DrugBank database is used in the example. But any gene (target) can be potentially used.
+f_file. A target file indicating the designated set of targets. A subset of target genes of FDA approved drug from **DrugBank** database is used in the example. But any gene (target) can be potentially used.
 
 **Genesets in a_file, b_file, c_file, d_file and e_file need to be identical. Genes in f_file need to be a subset of the identical geneset.**
 
