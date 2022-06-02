@@ -68,18 +68,19 @@ Input files
 -----------
 To run DSCN, input files need to be prepared, including:
 
-a_file. A tumor-tissue **expression profile**. It can be sequencing data or array expression data.
+>a_file. A tumor-tissue **expression profile**. It can be sequencing data or array expression data.
 
-b_file. A tumor vs normal tissue **fold change (FC)** profile.
-\n**Fold change is a value between 0 and positive infinity. It can not be log-fold-change (logFC). logFC would have negative value that would generate negative [eigen-value](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) and result in failure of the spectral clustering[1].**
+>b_file. A tumor vs normal tissue **fold change (FC)** profile.
 
-c_file. A cell-line **expression profile**. It can be sequencing data or array expression data.
+**Fold change is a value between 0 and positive infinity. It can not be log-fold-change (logFC). logFC would have negative value that would generate negative [eigen-value](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) and result in failure of the spectral clustering[1].**
 
-d_file. A cell-line **CRISPR screening** profile. CRISPR screening data of pancreatic cell-lines from [DepMap](https://depmap.org/portal/) is used in the example but RNAi data is also supported.
+>c_file. A cell-line **expression profile**. It can be sequencing data or array expression data.
 
-e_file. A Protein-protein interaction (**PPI**) network. [STRING](https://string-db.org/cgi/download?sessionId=bZvjml3QVCPG) human protein links V10 with no cut-off is used as the example. PPI networks from other sources such as PathPPI can also be used.
+>d_file. A cell-line **CRISPR screening** profile. CRISPR screening data of pancreatic cell-lines from [DepMap](https://depmap.org/portal/) is used in the example but RNAi data is also supported.
 
-f_file. A target file indicating the designated set of targets. A subset of target genes of FDA approved drug from [DrugBank](https://go.drugbank.com/) database is used in the example. But any gene (target) can be potentially used.
+>e_file. A Protein-protein interaction (**PPI**) network. [STRING](https://string-db.org/cgi/download?sessionId=bZvjml3QVCPG) human protein links V10 with no cut-off is used as the example. PPI networks from other sources such as PathPPI can also be used.
+
+>f_file. A target file indicating the designated set of targets. A subset of target genes of FDA approved drug from [DrugBank](https://go.drugbank.com/) database is used in the example. But any gene (target) can be potentially used.
 
 **Genesets in a_file, b_file, c_file, d_file and e_file need to be identical. Genes in f_file need to be a subset of the identical geneset.**
 
