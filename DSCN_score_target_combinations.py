@@ -73,6 +73,7 @@ exp_file=sys.argv[2]
 essen_file=sys.argv[3]
 ppi_file=sys.argv[4]
 cluster_file=sys.argv[5]
+n_threads=float(sys.argv[6])
 
 
 '''
@@ -194,7 +195,7 @@ if __name__ == '__main__':
 		print (total_result)
 '''
 f __name__ == '__main__':
-        p=mp.Pool(8)
+        p=mp.Pool(n_threads)
         total_task_set=[]
         count=0
         for target_combo in target_list:

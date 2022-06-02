@@ -92,17 +92,17 @@ a subset of a-f files will be created under the output_path.
 
 Usage
 ------
-STEP1: Prepare your input
+>STEP1: Prepare your input
 
-STEP2: Run spectral clustering first
+>STEP2: Run spectral clustering first
 
-e.g. python DSCN_WG_SC.py a_file' b_file' e_file' > SC_result
+e.g. python DSCN_spectral_clustering.py a_file' b_file' e_file' > SC_result
 
-STEP3: Score target combinations 
+>STEP3: Score target combinations 
 
-e.g. python DSCN_MP_TN_refine.py f_file' c_file' f_file' e_file' SC_result > ranked_list
+e.g. python DSCN_score_target_combination.py f_file' c_file' f_file' e_file' SC_result 4 > ranked_list
 
-STEP4: Estimate subnetwork similarity between tumor and cell-lines (optional)
+>STEP4: Estimate subnetwork similarity between tumor and cell-lines (optional)
 
 e.g. python DSCN_sn_similarity.py f_file' a_file' b_file' c_file' d_file' e_file' SC_result
 
