@@ -83,23 +83,25 @@ f_file. A target file indicating the designated set of targets. A subset of targ
 
 **Genesets in a_file, b_file, c_file, d_file and e_file need to be identical. Genes in f_file need to be a subset of the identical geneset.**
 
+A script in directory toolbox can be used for creating a consistent subset of a-f files.
+```
+python find_overlap.py a_file b_file c_file d_file f_file e_file
+
+```
+
 Usage
 ------
 STEP1: Prepare your input
 
-
-
-STEP2: Make a overlapped subset of your input files (a_file'-f_file')
-
-STEP3: Run spectral clustering first
+STEP2: Run spectral clustering first
 
 e.g. python DSCN_WG_SC.py a_file' b_file' e_file' > SC_result
 
-STEP4: Score target combinations 
+STEP3: Score target combinations 
 
 e.g. python DSCN_MP_TN_refine.py f_file' c_file' f_file' e_file' SC_result > ranked_list
 
-STEP5: Estimate subnetwork similarity between tumor and cell-lines (optional)
+STEP4: Estimate subnetwork similarity between tumor and cell-lines (optional)
 
 e.g. python DSCN_sn_similarity.py f_file' a_file' b_file' c_file' d_file' e_file' SC_result
 
