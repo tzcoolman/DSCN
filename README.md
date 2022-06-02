@@ -85,9 +85,9 @@ f_file. A target file indicating the designated set of targets. A subset of targ
 
 A script in directory toolbox can be used for creating a consistent subset of a-f files.
 ```
-python find_overlap.py a_file b_file c_file d_file f_file e_file
-
+python find_overlap.py a_file b_file c_file d_file f_file e_file output_path
 ```
+a subset of a-f files will be created under the output_path. 
 
 Usage
 ------

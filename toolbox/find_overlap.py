@@ -83,4 +83,4 @@ def batch_overlap(tumor_exp,tumor_fc,cell_exp,cell_fc,target_list,ppi_net,file_p
 	sub_select(ppi_net,2,file_path)
 	sub_select(target_list,1,file_path)
 if __name__=="__main__":
-	batch_overlap(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6],'./')
+	batch_overlap(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6],sys.argv[7])
