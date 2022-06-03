@@ -115,7 +115,6 @@ T1: PSMB1 : -0.884
 T2: PSMB1 AND SLC22A5: -1.023
 ...
 ```  
-  
 The predicted score can be **interpreted** similarly to the **DEMETER**[2] score from RNAi screening or **CERES**[3] score from CRISPR screening: A more negative value indicates a more decreased cell viability and vice versa.  
 Score(T1|T2) could be different from score(T2|T1) since the order of knockout has been taken into account in the model.  
 A combination is predicted to be synergistic if their combinational score is larger than the sum of their individual scores.  
