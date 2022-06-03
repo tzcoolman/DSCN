@@ -122,11 +122,11 @@ A combination is predicted to be synergistic if their combinational score is lar
 Network similarity
 ------------------
 DSCN offers an option of measuring network similarity between tissue-subnetworks and cell-line-subnetworks. The score indicates the distance between two subnetworks. Hence, the smaller the distance, the more similar two subnetworks are.  
+The cluster_id corresponds to the cluster IDs in SC_result file.
 ```
 Name cluster_id distance
 cluster: 1 3.5
 ```
-The cluster_id corresponds to the cluster IDs in SC_result file.
 References
 ----------
 [1] Von Luxburg U. A tutorial on spectral clustering[J]. Statistics and computing, 2007, 17(4): 395-416.  
