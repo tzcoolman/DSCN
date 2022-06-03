@@ -72,7 +72,7 @@ col_num=0
 while row_num<total_row:
 	col_num=0
 	row_sum=sum(cor_matrix[row_num])-cor_matrix[row_num][row_num]
-        while col_num<total_col:
+	while col_num<total_col:
 		if row_num!=col_num:
 			if cor_matrix[row_num][col_num]!=0:
 				cor_matrix[row_num][col_num]=cor_matrix[row_num][col_num]/row_sum*cor_matrix[row_num][row_num]
@@ -128,7 +128,7 @@ if __name__=="__main__":
 		gamma_v+=0.5
 final_result=rearrange_cluster_result(max_sc_result,gene_name)
 for key in final_result.keys():
-	print str(key)+"\t"+"\t".join(final_result[key])
+	print (str(key)+"\t"+"\t".join(final_result[key]))
 '''
 	f3=open(sys.argv[1],'w')
 	count=0
