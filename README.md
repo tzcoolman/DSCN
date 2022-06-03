@@ -28,9 +28,10 @@ DSCN generally contains the following steps:
 
 Quickstart
 ----------
-Run clustering on your tissue data as:
-
-
+Predict target combinations with an example dataset, which contain 1,000 genes, 84 targets of FDA approved drugs and >30,000 Protein-protein interactions.
+```
+python DSCN_score_target_combinations.py example/Overlap_FDA_drug_target.txt.WG example/Overlap_cellline_exp.txt.WG example/Overlap_cellline.FC.WG example/Overlap_string_PPI.network.WG example/Overlap.cluster 2 > ranked_list
+```
 
 Installation
 ----------
