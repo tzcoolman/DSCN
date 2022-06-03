@@ -1,4 +1,5 @@
 import networkx as nx
+import numpy as np
 import DSCN_scorer_local_TN as DSCN_scorer
 
 def copy_list(source,target):
@@ -112,20 +113,24 @@ def score_influence(target_node,graph,target_edge_list,order):
 		target_node_weight=graph.node[target_node]['weight']
 	else:
 		target_node_weight=graph.node[target_node]['weight_new']
-	total_score+=target_node_weight
+	#print (target_node_weight)
+	#for each_node_weight in target_node_weight:
+	total_score+=np.mean(target_node_weight)
 	operation_num+=1
 	temp_var_list.append(target_node_weight)
 	for each_task in target_edge_list:
 		#print '0'
 		if order==1:
 			edge_weight=graph[each_task[0]][each_task[1]]['weight'] #original edge weight
-			gene_target_weight=graph.node[each_task[0]]['weight'] #original essentiality 
+			gene_target_weight=np.mean(graph.node[each_task[0]]['weight']) #original essentiality 
+			#print (each_task[0])
 			gene_source_weight=graph.node[each_task[1]]['weight']
 		else:
 			edge_weight=graph[each_task[0]][each_task[1]]['weight_new'] #adjusted weight from subsampling
-			gene_target_weight=graph.node[each_task[0]]['weight_new'] #adjusted essentiality
-			gene_source_weight=graph.node[each_task[1]]['weight_new']
-		total_score+=gene_target_weight*edge_weight
+			gene_target_weight=np.mean(graph.node[each_task[0]]['weight_new']) #adjusted essentiality
+			gene_source_weight=np.mean(graph.node[each_task[1]]['weight_new'])
+		#print (edge_weight)
+		total_score+=float(gene_target_weight)*float(edge_weight)
 		operation_num+=1
 		temp_var_list.append(gene_target_weight*edge_weight)
 		if each_task==2:

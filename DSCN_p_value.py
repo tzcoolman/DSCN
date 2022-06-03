@@ -23,7 +23,7 @@ aaa['c']['d']['weight']=5
 #PAAD -0.015416104151 0.112180666564 7586924
 def fit_ground_dis(graph,mu,std):
 	total_regulation=[]
-	count=len(graph_edges)*2
+	count=len(graph.edges())*2
 	if mu*std!=0:
 		for ele in graph.edges():
 			#print ele[0],ele[1]
@@ -33,6 +33,8 @@ def fit_ground_dis(graph,mu,std):
 			#print edge_weight
 			node1_weight=sum(graph.node[ele[0]]['weight'])/len(graph.node[ele[0]]['weight'])
 			node2_weight=sum(graph.node[ele[1]]['weight'])/len(graph.node[ele[1]]['weight'])
+			#node1_weight=graph.node[ele[0]]['weight']
+			#node2_weight=graph.node[ele[1]]['weight']
 			total_regulation.append(node1_weight*edge_weight)
 			total_regulation.append(node2_weight*edge_weight)
 		mu, std = norm.fit(total_regulation)
@@ -44,4 +46,4 @@ def calculate_p(sample_mu,sample_std,sample_num,pop_mu,pop_std,pop_num):
 
 #print (calculate_p(5,20,10,70,49,2000))
 if __name__ == '__main__':
-	print fit_ground_dis(aaa)
+	print (fit_ground_dis(aaa))

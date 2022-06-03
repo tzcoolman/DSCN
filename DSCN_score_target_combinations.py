@@ -58,7 +58,10 @@ def new_pairwise_corr(sample_list,exp_hash,graph):
 def new_essentiality(sample_list,essen_hash,graph):
 	for node in graph.nodes():	
 		temp_list=sample_by_num(sample_list,essen_hash[node])
-		graph.node[node]['weight_new']=sum(temp_list)/len(temp_list) #get new average essentiality value for each node in the subnetwork
+		if temp_list==[]:
+			graph.node[node]['weight_new']=0
+		else:
+			graph.node[node]['weight_new']=sum(temp_list)/len(temp_list) #get new average essentiality value for each node in the subnetwork
 ############################################################
 #load exp, gene essen and PPI
 ############################################################
@@ -73,7 +76,7 @@ exp_file=sys.argv[2]
 essen_file=sys.argv[3]
 ppi_file=sys.argv[4]
 cluster_file=sys.argv[5]
-n_threads=float(sys.argv[6])
+n_threads=int(sys.argv[6])
 
 
 '''
@@ -103,11 +106,11 @@ DSCN_load.load_cluster(cluster_file,cluster_list,cell_graph)
 #only calculate correlations occured within subnetwork
 ############################################################
 DSCN_load.add_weight_to_sub_network(cell_graph,exp_hash,essen_hash)
-bg_mu=-0.015416104151
-bg_std=0.112180666564
+bg_mu=-0.015416104151#pre-defined background for PDAC
+bg_std=0.112180666564#pre-defined background for PDAC
 bg_stat=DSCN_p.fit_ground_dis(cell_graph,bg_mu,bg_std)
 (bg_mu,bg_std,count)=bg_stat
-print bg_mu,bg_sigma,count
+#print (bg_mu,bg_sigma,count)
 ############################################################
 #print (list(cell_graph.subgraph(['POLE2','HMMR']).edges()))
 ############################################################
@@ -116,7 +119,7 @@ print bg_mu,bg_sigma,count
 def execute_task(task_set):
 	result=""
 	each_target1=task_set[0]
-	t_list=task_set[1]
+	t_list=[task_set[1]]
 ############################################################
 ##initialize subnetwork1
 ############################################################
@@ -166,12 +169,13 @@ def execute_task(task_set):
 ###score subnetwork2
 #############################################################
 			target2_task_edges=DSCN_scorer.find_influ_neighbors(SG_2,each_target2)
+			#print (target2_task_edges)
 			(temp_score2,score_list2)=DSCN_scorer.score_influence(each_target2,SG_2,target2_task_edges,adj_type)
 #############################################################
 ###p-value
 #############################################################
 			temp_total_list=score_list+score_list2
-			calculate_p(np.mean(temp_total_list),np.std(temp_total_list),len(temp_total_list),bg_mu,bg_std,count)
+			#DSCN_p.calculate_p(np.mean(temp_total_list),np.std(temp_total_list),len(temp_total_list),bg_mu,bg_std,count)
 #############################################################
 ###score 2nd target
 #############################################################
@@ -185,26 +189,32 @@ def execute_task(task_set):
 #############################################################
 '''
 if __name__ == '__main__':
-        p=mp.Pool(8)
+	p=mp.Pool(n_threads)
 	total_task_set=[]
 	count=0
-	for target in target_list:
-		total_task_set.append((target,target_list))
-        total_result=p.map(execute_task,total_task_set)
+	for target in target_list.keys():
+		total_task_set.append([target,target_list.keys()])
+	#for ele in total_task_set:
+	#	print (ele[0])
+	#	print (ele[1])
+	execute_task(total_task_set[1])
+	total_result=p.map(execute_task,total_task_set)
 	for each_chunk in total_result:
 		print (total_result)
 '''
-f __name__ == '__main__':
-        p=mp.Pool(n_threads)
-        total_task_set=[]
-        count=0
-        for target_combo in target_list:
-                temp_combo=target_combo.split("\t")
-                total_task_set.append((temp_combo[0],[temp_combo[1]]))
-                total_task_set.append((temp_combo[1],[temp_combo[0]]))
-        #for task in total_task_set:
-        #       print task
-        total_result=p.map(execute_task,total_task_set)
-        for each_chunk in total_result:
-                print (each_chunk)
-
+if __name__ == '__main__':
+	p=mp.Pool(n_threads)
+	total_task_set=[]
+	count=0
+	for target_combo in target_list.keys():
+		temp_combo=target_combo.split("\t")
+		total_task_set.append((str(temp_combo[0]),str(temp_combo[1])))
+	#for atask in total_task_set:
+	#	print (execute_task(atask))
+	#total_result=execute_task(total_task_set[2])
+	#print (total_result)
+	#for ele in total_task_set:
+	#	print (ele)
+	total_result=p.map(execute_task,total_task_set)
+	for each_chunk in total_result:
+		print (each_chunk)
