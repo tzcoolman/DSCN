@@ -106,10 +106,24 @@ e.g. python DSCN_score_target_combinations.py f_file' c_file' f_file' e_file' SC
 
 e.g. python DSCN_sn_similarity.py f_file' a_file' b_file' c_file' d_file' e_file' SC_result
 
+Output file
+-----------
+The output (ranked_list) is a list of predicted score for one target and target combinations.
+```
+T1: PSMB1 : -0.884
+T2: PSMB1 AND SLC22A5: -1.023
+...
+```
+**The predicted score can be interpreted similarly to the DEMETER[2] score from RNAi screening or [CERES][3] score from CRISPR screening: A more negative value indicates a more decreased cell viability and vice versa.**
+
+**score(T1|T2) could be different from score(T2|T1) since the order of knockout has been taken into account in the model.**
+
+**A combination is predicted to be synergistic if their combinational score is larger than the sum of their individual scores.
 References
 ----------
 [1] Von Luxburg U. A tutorial on spectral clustering[J]. Statistics and computing, 2007, 17(4): 395-416.
-[2] 
+[2] Tsherniak A, Vazquez F, Montgomery PG, et al. Defining a cancer dependency map. Cell 2017;170:564–76.e16
+[3] Meyers R M, Bryan J G, McFarland J M, et al. Computational correction of copy number effect improves specificity of CRISPR–Cas9 essentiality screens in cancer cells[J]. Nature genetics, 2017, 49(12): 1779-1784.
 
 License
 -------
