@@ -111,9 +111,9 @@ if __name__ == '__main__':
 ############################################################
 #only calculate correlations occured within subnetwork
 ############################################################
-	for subn in cluster:
-		t_matrix=make_tc_matrix(tissue_graph.subgraph(subn),t_exp_hash,t_fc_hash)
-		c_matrix=make_tc_matrix(cell_graph.subgraph(subn),c_exp_hash,c_essen_hash)
+	for subn in cluster.keys():
+		t_matrix=make_tc_matrix(tissue_graph.subgraph(cluster[subn]),t_exp_hash,t_fc_hash)
+		c_matrix=make_tc_matrix(cell_graph.subgraph(cluster[subn]),c_exp_hash,c_essen_hash)
 		nt_matrix=normalize_matrix(t_matrix)
 		nc_matrix=normalize_matrix(c_matrix)
-		print (subn_similarity(nc_matrix,nt_matrix))
+		print ("cluster:",subn,subn_similarity(nc_matrix,nt_matrix))
